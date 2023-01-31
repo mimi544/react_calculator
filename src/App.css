@@ -34,7 +34,7 @@
   box-shadow: 1px -1px 40px 80px rgba(0, 0, 0, 0.15);
 }
 
-.smart_calculator_navbar_toogle_round {
+.smart_calculator_navbar_toggle_round {
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -42,6 +42,6 @@
   transition: 300ms;
 }
 
-.smart_calculator_navbar_toogle_round_active {
+.smart_calculator_navbar_toggle_round_active {
   margin-left: 15px;
 }
