@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-// import moonIcon from "./assets/moon.png";
-// import sunIcon from "./assets/sun.png";
+import moonIcon from "./assets/moon.png";
+import sunIcon from "./assets/sun.png";
 
 function App() {
 	const [darkmode, setDarkmode] = React.useState(false);
