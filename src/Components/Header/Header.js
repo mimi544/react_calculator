@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Header.css";
 function Header() {
+	const resultRef = useRef();
+
+	useEffect(() => {
+		resultRef.current.scrollIntoView({ behavior: "smooth" });
+	}, []);
+
 	return (
 		<div className="header custom-scroll">
 			<div className="calculator_history">
@@ -15,7 +21,9 @@ function Header() {
 			<div className="mathematical_expression custom-scroll">
 				<p>10+50+89</p>
 			</div>
-			<p className="calculator_result">149</p>
+			<p ref={resultRef} className="calculator_result">
+				149
+			</p>
 		</div>
 	);
 }
