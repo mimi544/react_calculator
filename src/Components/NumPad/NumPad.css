@@ -32,11 +32,21 @@
     height: 25%;
 }
 
-.numpad_signs {
+.numpad_signs1 {
     flex: 1;
 }
 
-.numpad_signs p {
+.numpad_signs1 p {
+    color: #89a5f1;
+    width: 100%;
+    height: 20%;
+}
+
+.numpad_signs2 {
+    flex: 1;
+}
+
+.numpad_signs2 p {
     color: #89a5f1;
     width: 100%;
     height: 20%;

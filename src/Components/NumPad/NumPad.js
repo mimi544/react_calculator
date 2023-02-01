@@ -1,6 +1,23 @@
 import React from "react";
 import "./NumPad.css";
 const NumPad = () => {
+	const signs1 = [
+		{
+			label: "DEL",
+			keyCode: 46,
+			value: "delete",
+		},
+		{
+			label: "%",
+			keyCode: 53,
+			value: "%",
+		},
+		{
+			label: "C",
+			keyCode: 67,
+			value: "clear",
+		},
+	];
 	const nums = [
 		{
 			keyCode: 55,
@@ -52,7 +69,7 @@ const NumPad = () => {
 		},
 	];
 
-	const signs = [
+	const signs2 = [
 		{
 			label: "⌫",
 			keyCode: 8,
@@ -78,11 +95,6 @@ const NumPad = () => {
 			keyCode: 107,
 			value: "+",
 		},
-		{
-			label: "%",
-			keyCode: 53,
-			value: "%",
-		},
 	];
 
 	return (
@@ -92,8 +104,13 @@ const NumPad = () => {
 					<p key={index}>{item.label}</p>
 				))}
 			</div>
-			<div className="numpad_signs">
-				{signs.map((item, index) => (
+			<div className="numpad_signs1">
+				{signs1.map((item, index) => (
+					<p key={index}>{item.label}</p>
+				))}
+			</div>
+			<div className="numpad_signs2">
+				{signs2.map((item, index) => (
 					<p key={index}>{item.label}</p>
 				))}
 			</div>
