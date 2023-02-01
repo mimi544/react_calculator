@@ -8,8 +8,17 @@ import NumPad from "./Components/NumPad/NumPad";
 
 function App() {
 	const [darkmode, setdarkmode] = useState(false);
+
+	const handleNumPress = (keyCode, num) => {
+		console.log(keyCode, num);
+	};
 	return (
-		<div className="App" data-theme={darkmode ? "dark" : ""}>
+		<div
+			className="App"
+			tabIndex="0"
+			onKeyDown={(event) => handleNumPress(event.keyCode, event.num)}
+			data-theme={darkmode ? "dark" : ""}
+		>
 			<div className="smart_calculator">
 				<div className="smart_calculator_navbar">
 					<div
