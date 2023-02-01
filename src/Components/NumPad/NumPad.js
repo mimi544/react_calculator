@@ -1,6 +1,6 @@
 import React from "react";
 import "./NumPad.css";
-const NumPad = () => {
+const NumPad = (props) => {
 	const signs1 = [
 		{
 			label: "DEL",
@@ -101,17 +101,38 @@ const NumPad = () => {
 		<div className="numpad">
 			<div className="numpad_nums">
 				{nums.map((item, index) => (
-					<p key={index}>{item.label}</p>
+					<p
+						onClick={() =>
+							props.handleNumPress(item.keyCode, item.label)
+						}
+						key={index}
+					>
+						{item.label}
+					</p>
 				))}
 			</div>
 			<div className="numpad_signs1">
 				{signs1.map((item, index) => (
-					<p key={index}>{item.label}</p>
+					<p
+						onClick={() =>
+							props.handleNumPress(item.keyCode, item.label)
+						}
+						key={index}
+					>
+						{item.label}
+					</p>
 				))}
 			</div>
 			<div className="numpad_signs2">
 				{signs2.map((item, index) => (
-					<p key={index}>{item.label}</p>
+					<p
+						onClick={() =>
+							props.handleNumPress(item.keyCode, item.label)
+						}
+						key={index}
+					>
+						{item.label}
+					</p>
 				))}
 			</div>
 		</div>

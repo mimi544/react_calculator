@@ -9,8 +9,8 @@ import NumPad from "./Components/NumPad/NumPad";
 function App() {
 	const [darkmode, setdarkmode] = useState(false);
 
-	const handleNumPress = (keyCode, num) => {
-		console.log(keyCode, num);
+	const handleNumPress = (keyCode, key) => {
+		console.log(keyCode, key);
 	};
 	return (
 		<div
@@ -37,7 +37,7 @@ function App() {
 				</div>
 
 				<Header />
-				<NumPad />
+				<NumPad handleNumPress={handleNumPress} />
 			</div>
 		</div>
 	);
