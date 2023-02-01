@@ -12,6 +12,23 @@
   --text-color-2: #bbbcbc;
 }
 
+.custom-scroll::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}
+
 
 .App {
   background: #032f69;
@@ -50,7 +67,7 @@
   width: 24px;
 }
 
-.smart_calculator_navbar_toogle {
+.smart_calculator_navbar_toggle {
   height: 15px;
   width: 30px;
   border-radius: 20px;
