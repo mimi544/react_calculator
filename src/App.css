@@ -39,8 +39,8 @@
 }
 
 .smart_calculator {
-  height: 500px;
-  width: 280px;
+  height: 540px;
+  width: 380px;
   border-radius: 30px;
   box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.15);
   position: relative;

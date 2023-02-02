@@ -1,24 +1,23 @@
 import React from "react";
 import "./NumPad.css";
 const NumPad = (props) => {
-	const signs1 = [
+	const buttons = [
 		{
 			label: "DEL",
 			keyCode: 46,
-			value: "delete",
 		},
 		{
 			label: "%",
 			keyCode: 53,
-			value: "%",
 		},
 		{
 			label: "C",
 			keyCode: 67,
-			value: "clear",
 		},
-	];
-	const nums = [
+		{
+			label: "⌫",
+			keyCode: 8,
+		},
 		{
 			keyCode: 55,
 			label: "7",
@@ -32,6 +31,10 @@ const NumPad = (props) => {
 			label: "9",
 		},
 		{
+			label: "÷",
+			keyCode: 111,
+		},
+		{
 			keyCode: 52,
 			label: "4",
 		},
@@ -42,6 +45,10 @@ const NumPad = (props) => {
 		{
 			keyCode: 54,
 			label: "6",
+		},
+		{
+			label: "×",
+			keyCode: 56,
 		},
 		{
 			keyCode: 49,
@@ -67,40 +74,21 @@ const NumPad = (props) => {
 			keyCode: 13,
 			label: "=",
 		},
-	];
 
-	const signs2 = [
-		{
-			label: "⌫",
-			keyCode: 8,
-			value: "backspace",
-		},
-		{
-			label: "÷",
-			keyCode: 111,
-			value: "/",
-		},
-		{
-			label: "×",
-			keyCode: 56,
-			value: "*",
-		},
 		{
 			label: "﹣",
 			keyCode: 109,
-			value: "-",
 		},
 		{
 			label: "+",
 			keyCode: 107,
-			value: "+",
 		},
 	];
 
 	return (
-		<div className="numpad">
-			<div className="numpad_nums">
-				{nums.map((item, index) => (
+		<div className="num_pad">
+			<div className="num_pad_num">
+				{buttons.map((item, index) => (
 					<p
 						onClick={() =>
 							props.handleNumPress(item.keyCode, item.label)
@@ -111,7 +99,7 @@ const NumPad = (props) => {
 					</p>
 				))}
 			</div>
-			<div className="numpad_signs1">
+			{/* <div className="numpad_signs1">
 				{signs1.map((item, index) => (
 					<p
 						onClick={() =>
@@ -134,7 +122,7 @@ const NumPad = (props) => {
 						{item.label}
 					</p>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 };
