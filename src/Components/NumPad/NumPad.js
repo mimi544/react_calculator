@@ -54,9 +54,9 @@ const NumPad = (props) => {
 
 	const signs = [
 		{
-			label: "⌫",
-			keyCode: 8,
-			value: "backspace",
+			label: "C",
+			keyCode: 67,
+			value: "all clear",
 		},
 		{
 			label: "÷",

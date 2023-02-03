@@ -47,10 +47,13 @@ function App() {
 			if (!numbers.includes(lastChar)) return;
 
 			setExpression(expression + key);
-		} else if (keyCode === 8) {
+		} else if (keyCode === 67) {
 			if (!expression) return;
-			calculateResult(expression.slice(0, -1));
-			setExpression(expression.slice(0, -1));
+			setHistory([]);
+			setExpression("");
+			setResult("");
+			// calculateResult(expression.slice(0, -1));
+			// setExpression(expression.slice(0, -1));
 		} else if (keyCode === 13) {
 			if (!expression) return;
 			calculateResult(expression);
@@ -72,6 +75,7 @@ function App() {
 
 		const answer = eval(exp).toFixed(2) + "";
 		setResult(answer);
+		setExpression(answer);
 	};
 
 	useEffect(() => {
