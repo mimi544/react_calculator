@@ -85,7 +85,7 @@ const NumPad = (props) => {
 				{nums.map((item, index) => (
 					<p
 						onClick={() =>
-							props.handleKeyPress(item.keyCode, item.label)
+							props.handleNumPress(item.keyCode, item.label)
 						}
 						key={index}
 					>
@@ -97,7 +97,7 @@ const NumPad = (props) => {
 				{signs.map((item, index) => (
 					<p
 						onClick={() =>
-							props.handleKeyPress(item.keyCode, item.value)
+							props.handleNumPress(item.keyCode, item.value)
 						}
 						key={index}
 					>
