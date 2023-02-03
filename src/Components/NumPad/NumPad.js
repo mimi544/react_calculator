@@ -1,23 +1,7 @@
 import React from "react";
 import "./NumPad.css";
 const NumPad = (props) => {
-	const buttons = [
-		{
-			label: "DEL",
-			keyCode: 46,
-		},
-		{
-			label: "%",
-			keyCode: 53,
-		},
-		{
-			label: "C",
-			keyCode: 67,
-		},
-		{
-			label: "⌫",
-			keyCode: 8,
-		},
+	const nums = [
 		{
 			keyCode: 55,
 			label: "7",
@@ -29,10 +13,6 @@ const NumPad = (props) => {
 		{
 			keyCode: 57,
 			label: "9",
-		},
-		{
-			label: "÷",
-			keyCode: 111,
 		},
 		{
 			keyCode: 52,
@@ -47,10 +27,6 @@ const NumPad = (props) => {
 			label: "6",
 		},
 		{
-			label: "×",
-			keyCode: 56,
-		},
-		{
 			keyCode: 49,
 			label: "1",
 		},
@@ -61,10 +37,6 @@ const NumPad = (props) => {
 		{
 			keyCode: 51,
 			label: "3",
-		},
-		{
-			label: "﹣",
-			keyCode: 109,
 		},
 		{
 			keyCode: 48,
@@ -78,55 +50,60 @@ const NumPad = (props) => {
 			keyCode: 13,
 			label: "=",
 		},
+	];
+
+	const signs = [
+		{
+			label: "⌫",
+			keyCode: 8,
+			value: "backspace",
+		},
+		{
+			label: "÷",
+			keyCode: 111,
+			value: "/",
+		},
+		{
+			label: "×",
+			keyCode: 56,
+			value: "*",
+		},
+		{
+			label: "﹣",
+			keyCode: 109,
+			value: "-",
+		},
 		{
 			label: "+",
 			keyCode: 107,
+			value: "+",
 		},
 	];
-
 	return (
-		<div className="num_pad">
-			<div className="num_pad_num">
-				{buttons.map((item, index) => {
-					if (
-						item.label === "DEL" ||
-						item.label === "⌫" ||
-						item.label === "C" ||
-						item.label === "%" ||
-						item.label === "÷" ||
-						item.label === "×" ||
-						item.label === "﹣" ||
-						item.label === "+"
-					)
-						return (
-							<p
-								onClick={() =>
-									props.handleNumPress(
-										item.keyCode,
-										item.label
-									)
-								}
-								key={index}
-								style={{ backgroundColor: "grey" }}
-							>
-								{item.label}
-							</p>
-						);
-					else
-						return (
-							<p
-								onClick={() =>
-									props.handleNumPress(
-										item.keyCode,
-										item.label
-									)
-								}
-								key={index}
-							>
-								{item.label}
-							</p>
-						);
-				})}
+		<div className="numpad">
+			<div className="numpad_nums">
+				{nums.map((item, index) => (
+					<p
+						onClick={() =>
+							props.handleKeyPress(item.keyCode, item.label)
+						}
+						key={index}
+					>
+						{item.label}
+					</p>
+				))}
+			</div>
+			<div className="numpad_signs">
+				{signs.map((item, index) => (
+					<p
+						onClick={() =>
+							props.handleKeyPress(item.keyCode, item.value)
+						}
+						key={index}
+					>
+						{item.label}
+					</p>
+				))}
 			</div>
 		</div>
 	);

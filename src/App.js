@@ -11,8 +11,7 @@ const usedKeyCodes = [
 	102, 103, 104, 105, 8, 13, 190, 187, 189, 191, 56, 111, 106, 107, 109,
 ];
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const operators1 = ["DEl", "%", "C"];
-const operators2 = ["-", "+", "*", "/"];
+const operators = ["-", "+", "*", "/"];
 
 function App() {
 	const [darkmode, setdarkmode] = useState(false);

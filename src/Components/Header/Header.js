@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Header.css";
-function Header() {
+function Header(props) {
 	const resultRef = useRef();
 
 	useEffect(() => {
