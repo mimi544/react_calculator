@@ -52,8 +52,6 @@ function App() {
 			setHistory([]);
 			setExpression("");
 			setResult("");
-			// calculateResult(expression.slice(0, -1));
-			// setExpression(expression.slice(0, -1));
 		} else if (keyCode === 13) {
 			if (!expression) return;
 			calculateResult(expression);
