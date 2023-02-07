@@ -14,7 +14,7 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const operators = ["-", "+", "*", "/"];
 
 function App() {
-	const [Darkmode, setDarkmode] = useState(
+	const [darkMode, setDarkMode] = useState(
 		JSON.parse(localStorage.getItem("calculator-app-mode")) || false
 	);
 	const [expression, setExpression] = useState("");
@@ -77,8 +77,8 @@ function App() {
 	};
 
 	useEffect(() => {
-		localStorage.setItem("calculator-app-mode", JSON.stringify(Darkmode));
-	}, [Darkmode]);
+		localStorage.setItem("calculator-app-mode", JSON.stringify(darkMode));
+	}, [darkMode]);
 
 	useEffect(() => {
 		localStorage.setItem("calculator-app-history", JSON.stringify(history));
@@ -89,23 +89,23 @@ function App() {
 			className="App"
 			tabIndex="0"
 			onKeyDown={(event) => handleNumPress(event.keyCode, event.key)}
-			data-theme={Darkmode ? "dark" : ""}
+			data-theme={darkMode ? "dark" : ""}
 		>
 			<div className="smart_calculator">
 				<div className="smart_calculator_navbar">
 					<div
 						className="smart_calculator_navbar_toggle"
-						onClick={() => setDarkmode(!Darkmode)}
+						onClick={() => setDarkMode(!darkMode)}
 					>
 						<div
 							className={`smart_calculator_navbar_toggle_round ${
-								Darkmode
+								darkMode
 									? "smart_calculator_navbar_toggle_round_active"
 									: ""
 							}`}
 						/>
 					</div>
-					<img src={Darkmode ? moonIcon : sunIcon} alt="mode" />
+					<img src={darkMode ? moonIcon : sunIcon} alt="mode" />
 				</div>
 
 				<Header
